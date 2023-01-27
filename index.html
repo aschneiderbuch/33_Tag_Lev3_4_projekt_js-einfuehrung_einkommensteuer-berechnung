@@ -13,10 +13,12 @@
 </head>
 
 <body>
-    <h1>test</h1>
 
     <section>
         <form action="" onsubmit="return false">
+            <section>
+                <h1>Einkommensteuerrechner</h1>
+            </section>
 
             <!-- Radio Buttons Auswahl Jahre -->
             <section>
@@ -35,9 +37,25 @@
                 <input type="radio" name="familienstand" id="radio_singel">
                 <label for="singel">Singel</label>
 
-<input type="radio" name="familienstand" id="radio_verheiratet">
-<label for="verheiratet">Verheiratet</label>
+                <input type="radio" name="familienstand" id="radio_verheiratet">
+                <label for="verheiratet">Verheiratet</label>
 
+            </section>
+
+            <!-- Eingabelfeld -->
+            <section>
+                <h2>Gib hier das Gesamte Einkommen von dir bzw. euch beiden ein</h2>
+
+                <input type="number" name="inputTextfeldGesamtEinkommen" id="input_zvE_textFeld_GesamtEinkommen">
+
+                <input id="button_berechnen" type="button" value="BERECHNEN">
+            </section>
+
+
+            <!-- Ausgabefled -->
+            <section>
+                <h3>Hier steht gleich deine Steuer für das Jahr <span>???</span> </h3>
+                <p id="output_Est">... in €</p>
             </section>
 
 

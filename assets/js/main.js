@@ -32,7 +32,6 @@ Output
 */
 
 
-
 // Variablen 
 // Radio 
 const radio_jahr2020 = document.querySelector("#radio_jahr2020");
@@ -102,15 +101,9 @@ function wechselDasJahr() {
 function berechnen() {
     if (radio_jahr2020.checked === true && radio_verheiratet.checked === true && input_zvE_textFeld_GesamtEinkommen.value > 0) {
 
-        if (radio_verheiratet.checked === true) {
 
-/*             if (radio_verheiratet.checked === true) {
- */            let faktor = 2;               // singel = 1    verheiratet = 2
-            /*             return faktor
-                        } else {
-                            let faktor =1;
-                            return faktor
-                        } */
+           let faktor = 2;               // singel = 1    verheiratet = 2
+
             console.log(`faktor singel=1 verheiratet =2  ${faktor}`);
 
             let ESt = Jahr2020_Fall1(faktor);// Faktor 2 weil verheiratet  
@@ -121,7 +114,7 @@ function berechnen() {
             output_ESt.innerHTML = ` ${ESt} €`;
 
         }
-    }
+    
 
 };
 
@@ -134,12 +127,13 @@ function Jahr2020_Fall1(x) {
     console.log("in Funktion Jahr2020_Fall1  +  eventListener")
     let ESt = "";
 
-    /* zvE = zvEVerheiratet();
-     */
+
     let zvE = input_zvE_textFeld_GesamtEinkommen.value;
     console.log(`zvE vom Inputfeld: ${zvE}`);
+
     zvE = zvE * x;
     console.log(`zve * x(2) = ${zvE}`);
+
     ESt = zvE * 10; // hier die Formeln von den Homepages
     console.log(`ESt * 10 = ${ESt}`);
 
@@ -147,8 +141,3 @@ function Jahr2020_Fall1(x) {
 };
 
 
-function zvEVerheiratet() {
-    zvE = input_zvE_textFeld_GesamtEinkommen.value * 2
-    return zvE;
-
-};

@@ -1,6 +1,11 @@
 /* test */
 h1 {
-  color: green;
+  color: yellow;
+  display: flex;
 }
+
+h1 p {
+  display: block;
+} /*# sourceMappingURL=main.css.map */
 
 /*# sourceMappingURL=style.css.map */

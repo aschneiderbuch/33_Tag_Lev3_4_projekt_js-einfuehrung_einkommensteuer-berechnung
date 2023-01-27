@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>33_Tag_Lev3_4_projekt_js-einfuehrung_einkommensteuer-berechnung</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/scss/main.css">
     <!-- 
-        sass assets/scss/main.scss assets/css/style.css
+        sass assets/scss/main.css assets/css/style.css
      -->
 </head>
 
@@ -22,22 +23,22 @@
 
             <!-- Radio Buttons Auswahl Jahre -->
             <section>
-                <input type="radio" name="jahr" id="radio_jahr2020">
+                <input type="radio" name="jahr" id="radio_jahr2020" placeholder="button jahr 2020">
                 <label for="jahr">2020</label>
 
-                <input type="radio" name="jahr" id="radio_jahr2021">
+                <input type="radio" name="jahr" id="radio_jahr2021" placeholder="button jahr 2021">
                 <label for="jahr">2021</label>
 
-                <input type="radio" name="jahr" id="radio_jahr2022">
+                <input type="radio" name="jahr" id="radio_jahr2022" placeholder="button jahr 2022">
                 <label for="jahr">2022</label>
             </section>
 
             <!-- Radio Button  Auswahl Singel Verheiratet   -->
             <section>
-                <input type="radio" name="familienstand" id="radio_singel">
+                <input type="radio" name="familienstand" id="radio_singel" placeholder="button Singel ">
                 <label for="singel">Singel</label>
 
-                <input type="radio" name="familienstand" id="radio_verheiratet">
+                <input type="radio" name="familienstand" id="radio_verheiratet" placeholder="button Verheiratet">
                 <label for="verheiratet">Verheiratet</label>
 
             </section>
@@ -46,7 +47,7 @@
             <section>
                 <h2>Gib hier das Gesamte Einkommen von dir bzw. euch beiden ein</h2>
 
-                <input type="number" name="inputTextfeldGesamtEinkommen" id="input_zvE_textFeld_GesamtEinkommen">
+                <input type="number" name="inputTextfeldGesamtEinkommen" id="input_zvE_textFeld_GesamtEinkommen" placeholder="hier Ihr gesamtes Jahreseinkommen in Euro">
 
                 <input id="button_berechnen" type="button" value="BERECHNEN">
             </section>

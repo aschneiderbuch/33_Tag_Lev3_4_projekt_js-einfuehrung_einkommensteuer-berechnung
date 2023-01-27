@@ -35,48 +35,120 @@ Output
 
 // Variablen 
 // Radio 
+const radio_jahr2020 = document.querySelector("#radio_jahr2020");
+
+const radio_jahr2021 = document.querySelector("#radio_jahr2021");
+
 const radio_jahr2022 = document.querySelector("#radio_jahr2022");
 console.log(radio_jahr2022);
 
-const radio_jahr2020 = document.querySelector("#radio_jahr2020");
-const radio_jahr2020___checked = radio_jahr2020.checked;
-
-const radio_jahr2021 = document.querySelector("#radio_jahr2021");
-const radio_jahr2021___checked = radio_jahr2021.checked;
-
 // Familienstand
-let radio_singel = document.querySelector("#radio_singel");
-let radio_singel___checked = radio_singel.checked;
+const radio_singel = document.querySelector("#radio_singel");
 
-let radio_verheiratet = document.querySelector("#radio_verheiratet");
-let radio_verheiratet___checked = radio_verheiratet.checked;
+const radio_verheiratet = document.querySelector("#radio_verheiratet");
 
 
+// Textfeld Gehalt
+let input_zvE_textFeld_GesamtEinkommen = document.querySelector("#input_zvE_textFeld_GesamtEinkommen");
+
+// output
+const span_textJahr = document.querySelector("#span_textJahr");
+
+const output_ESt = document.querySelector("#output_ESt");
 
 
+// Button berechnen
+const button_berechnen = document.querySelector("#button_berechnen");
 
-
-
-
-let button_berechnen = document.querySelector("#button_berechnen");
-
-
+// Ende default Varibalen definition 
 
 
 // Eventlistener
-button_berechnen.addEventListener("click", test);
+button_berechnen.addEventListener("click", berechnen);
+
+radio_jahr2020.addEventListener("change", wechselDasJahr);
+radio_jahr2021.addEventListener("change", wechselDasJahr);
+radio_jahr2022.addEventListener("change", wechselDasJahr);
 
 
 
-function test(){
-    let radio_jahr2022___checked = radio_jahr2022.value;
-    console.log(radio_jahr2022___checked);
+
+// Funktion Jahre vergleichen und Text des Jahres unten bei output in den span rein
+function wechselDasJahr() {
+    console.log("in Funktion wechselDasJahr  +  eventListener geht");
 
 
-     console.log(radio_jahr2022.checked);
-     console.log( radio_jahr2020___checked, radio_jahr2021___checked, radio_jahr2022___checked, radio_singel___checked, radio_verheiratet___checked,)
+    if (radio_jahr2020.checked === true) {
+        span_textJahr.innerHTML = "2020";
+        console.log(radio_jahr2020.checked);
+        console.log(span_textJahr.innerHTML);
+        console.log(radio_jahr2022.checked);
+/*         return;
+ */    }
 
-}
+    else if (radio_jahr2021.checked === true) {
+        span_textJahr.innerHTML = "2021";
+/*         return;
+ */    }
+    else if (radio_jahr2022.checked === true) {
+        span_textJahr.innerHTML = "2022";
+/*         return;
+ */    } else {
+
+    }
+
+};
+
+function berechnen() {
+    if (radio_jahr2020.checked === true && radio_verheiratet.checked === true && input_zvE_textFeld_GesamtEinkommen.value > 0) {
+
+        if (radio_verheiratet.checked === true) {
+
+/*             if (radio_verheiratet.checked === true) {
+ */            let faktor = 2;               // singel = 1    verheiratet = 2
+            /*             return faktor
+                        } else {
+                            let faktor =1;
+                            return faktor
+                        } */
+            console.log(`faktor singel=1 verheiratet =2  ${faktor}`);
+
+            let ESt = Jahr2020_Fall1(faktor);// Faktor 2 weil verheiratet  
+            console.log(`Est = ${ESt}`);
+            ESt = ESt / faktor;                      // Faktor 2 hier wieder weg nehmen 
+            console.log(`Est /2 bzw Faktor = ${ESt}`);
+
+            output_ESt.innerHTML = ` ${ESt} €`;
+
+        }
+    }
+
+};
 
 
-test();
+
+/* Jahr2020_Fall1(); */
+
+// Funktionen verschiede Szenarien 3 Jahre je 5 St 
+function Jahr2020_Fall1(x) {
+    console.log("in Funktion Jahr2020_Fall1  +  eventListener")
+    let ESt = "";
+
+    /* zvE = zvEVerheiratet();
+     */
+    let zvE = input_zvE_textFeld_GesamtEinkommen.value;
+    console.log(`zvE vom Inputfeld: ${zvE}`);
+    zvE = zvE * x;
+    console.log(`zve * x(2) = ${zvE}`);
+    ESt = zvE * 10; // hier die Formeln von den Homepages
+    console.log(`ESt * 10 = ${ESt}`);
+
+    return ESt
+};
+
+
+function zvEVerheiratet() {
+    zvE = input_zvE_textFeld_GesamtEinkommen.value * 2
+    return zvE;
+
+};

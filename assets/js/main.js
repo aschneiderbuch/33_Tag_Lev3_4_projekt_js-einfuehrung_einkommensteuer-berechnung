@@ -33,18 +33,48 @@ Output
 
 
 
-// Variablen Input
-
-let radio_jahr2022 = document.querySelector("#radio_jahr2022").ariaChecked;
+// Variablen 
+// Radio 
+const radio_jahr2022 = document.querySelector("#radio_jahr2022");
 console.log(radio_jahr2022);
 
+const radio_jahr2020 = document.querySelector("#radio_jahr2020");
+const radio_jahr2020___checked = radio_jahr2020.checked;
+
+const radio_jahr2021 = document.querySelector("#radio_jahr2021");
+const radio_jahr2021___checked = radio_jahr2021.checked;
+
+// Familienstand
+let radio_singel = document.querySelector("#radio_singel");
+let radio_singel___checked = radio_singel.checked;
+
+let radio_verheiratet = document.querySelector("#radio_verheiratet");
+let radio_verheiratet___checked = radio_verheiratet.checked;
 
 
+
+
+
+
+
+
+let button_berechnen = document.querySelector("#button_berechnen");
+
+
+
+
+// Eventlistener
+button_berechnen.addEventListener("click", test);
 
 
 
 function test(){
-    console.log(radio_jahr2022);
+    let radio_jahr2022___checked = radio_jahr2022.value;
+    console.log(radio_jahr2022___checked);
+
+
+     console.log(radio_jahr2022.checked);
+     console.log( radio_jahr2020___checked, radio_jahr2021___checked, radio_jahr2022___checked, radio_singel___checked, radio_verheiratet___checked,)
 
 }
 

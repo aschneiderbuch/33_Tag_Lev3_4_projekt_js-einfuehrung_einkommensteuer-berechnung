@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +11,45 @@
         sass assets/scss/main.scss assets/css/style.css
      -->
 </head>
+
 <body>
     <h1>test</h1>
-    
+
+    <section>
+        <form action="" onsubmit="return false">
+
+            <!-- Radio Buttons Auswahl Jahre -->
+            <section>
+                <input type="radio" name="jahr" id="radio_jahr2020">
+                <label for="jahr">2020</label>
+
+                <input type="radio" name="jahr" id="radio_jahr2021">
+                <label for="jahr">2021</label>
+
+                <input type="radio" name="jahr" id="radio_jahr2022">
+                <label for="jahr">2022</label>
+            </section>
+
+            <!-- Radio Button  Auswahl Singel Verheiratet   -->
+            <section>
+                <input type="radio" name="familienstand" id="radio_singel">
+                <label for="singel">Singel</label>
+
+<input type="radio" name="familienstand" id="radio_verheiratet">
+<label for="verheiratet">Verheiratet</label>
+
+            </section>
+
+
+
+
+
+        </form>
+    </section>
+
+
 
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
